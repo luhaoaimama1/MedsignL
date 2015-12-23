@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--&lt;!&ndash;导航栏底色&ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/accent_material_dark</item>-->
+        <!--&lt;!&ndash;状态栏底色&ndash;&gt;-->
+        <!--<item name="colorPrimaryDark">@color/accent_material_light</item>-->
+        <!--&lt;!&ndash;导航栏上的标题颜色&ndash;&gt;-->
+        <!--<item name="android:textColorPrimary">@android:color/black</item>-->
+        <!--&lt;!&ndash;Activity窗口的颜色&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/material_blue_grey_800</item>-->
+        <!--&lt;!&ndash;按钮选中或者点击获得焦点后的颜色&ndash;&gt;-->
+        <!--<item name="colorAccent">#00ff00</item>-->
+        <!--&lt;!&ndash;和 colorAccent相反，正常状态下按钮的颜色&ndash;&gt;-->
+        <!--<item name="colorControlNormal">#ff0000</item>-->
+        <!--&lt;!&ndash;Button按钮正常状态颜色&ndash;&gt;-->
+        <!--<item name="colorButtonNormal">@color/accent_material_light</item>-->
+        <!--&lt;!&ndash;EditText 输入框中字体的颜色&ndash;&gt;-->
+        <!--<item name="editTextColor">@android:color/white</item>-->
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppThemeZZ" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--导航栏底色-->
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <!--状态栏底色-->
+        <item name="colorPrimaryDark">#00FF00</item>
+        <!--导航栏上的标题颜色-->
+        <item name="android:textColorPrimary">#888800</item>
+        <!--Activity窗口的颜色-->
+        <item name="android:windowBackground">@color/material_blue_grey_800</item>
+        <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="colorAccent">#004565</item>
+        <!--和 colorAccent相反，正常状态下按钮的颜色-->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!--Button按钮正常状态颜色-->
+        <item name="colorButtonNormal">@color/accent_material_light</item>
+        <!--EditText 输入框中字体的颜色-->
+        <item name="editTextColor">@android:color/white</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Base application theme. -->
+    <style name="AppTheme_too" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--导航栏底色-->
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <!--状态栏底色-->
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
+        <!--导航栏上的标题颜色-->
+        <item name="android:textColorPrimary">#000000</item>
+        <!--Activity窗口的颜色-->
+        <item name="android:windowBackground">@color/material_blue_grey_800</item>
+        <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="colorAccent">#00ff00</item>
+        <!--和 colorAccent相反，正常状态下按钮的颜色-->
+        <item name="colorControlNormal">#ff0000</item>
+        <!--Button按钮正常状态颜色-->
+        <item name="colorButtonNormal">@color/accent_material_light</item>
+        <!--EditText 输入框中字体的颜色-->
+        <item name="editTextColor">@android:color/white</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="NightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--导航栏底色-->
+        <item name="colorPrimary">@color/accent_material_dark</item>
+        <!--状态栏底色-->
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
+        <!--导航栏上的标题颜色-->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!--Activity窗口的颜色-->
+        <item name="android:windowBackground">@color/material_blue_grey_800</item>
+        <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="colorAccent">#00ff00</item>
+        <!--和 colorAccent相反，正常状态下按钮的颜色-->
+        <item name="colorControlNormal">#ff0000</item>
+        <!--Button按钮正常状态颜色-->
+        <item name="colorButtonNormal">@color/accent_material_light</item>
+        <!--EditText 输入框中光标的颜色-->
+        <item name="editTextColor">@android:color/white</item>
+    </style>
+
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <!--<item name="tabMaxWidth">1</item>-->
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <!--<item name="textAllCaps">false</item>-->
+    </style>
+
+</resources>
