@@ -22,7 +22,7 @@ import java.util.List;
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     private String tabTitles[] = new String[]{"tab1","tab2"};
-    private List<Fragment> fragList =new ArrayList<Fragment>();
+    private List<Fragment> fragList =new ArrayList<>();
     private Context context;
 
     public SimpleFragmentPagerAdapter(FragmentManager fm,Context context) {

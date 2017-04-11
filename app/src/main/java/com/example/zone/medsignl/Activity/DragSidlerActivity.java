@@ -34,6 +34,7 @@ public class DragSidlerActivity extends AppCompatActivity {
         menu.add("我黑风你啊");
         menu.add("变态");
         menu.add("无敌龙卷风");
+
     }
 
     private Adapter_Zone<String> adapter;

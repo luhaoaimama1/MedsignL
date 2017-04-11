@@ -32,6 +32,7 @@ public class NormalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return mParentView = inflater.inflate(R.layout.activity_main, container, false);
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,12 +44,34 @@ public class NormalFragment extends Fragment {
                 @SuppressLint("NewApi")
                 @Override
                 public void getOutline(View view, Outline outline) {
-                    outline.setRoundRect(0,0,tv_clip.getWidth(),tv_clip.getHeight(),30);
+                    outline.setRoundRect(0, 0, tv_clip.getWidth(), tv_clip.getHeight(), 30);
 //                    outline.setOval(0,0,tv_clip.getWidth(),tv_clip.getHeight());
                 }
             });
         }
         final TextInputLayout inputLayout = (TextInputLayout) view.findViewById(R.id.textInput);
+
+        final EditText ed_test = (EditText) view.findViewById(R.id.ed_test);
+        ed_test.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                ed_test.setError("请输入手机号");
+                System.out.println("1");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
         inputLayout.setHint("请输入姓名:");
 
         EditText editText = inputLayout.getEditText();
