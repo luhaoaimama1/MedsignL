@@ -5,6 +5,7 @@
     android:orientation="vertical">
     <!--仅仅为了不让TextInputLayout里的EditText先获取焦点，不然动画效果不明显-->
     <EditText
+        android:id="@+id/ed_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="TextInputLayout实例" />

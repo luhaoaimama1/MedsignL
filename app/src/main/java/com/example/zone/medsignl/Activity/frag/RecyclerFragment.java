@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.zone.medsignl.Activity.DragSidlerActivity;
 import com.example.zone.medsignl.Images;
 import com.example.zone.medsignl.R;
 import com.example.zone.medsignl.RecyclerHolder.Adapter_Zone_Recycler;
@@ -24,11 +26,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import zone.com.zrefreshlayout.ZRefreshLayout;
+
 /**
  * Created by Zone on 2015/12/18.
  */
 public class RecyclerFragment extends Fragment {
     private RecyclerView recycler;
+    private ZRefreshLayout zrl;
 
     @Nullable
     @Override
@@ -79,6 +84,45 @@ public class RecyclerFragment extends Fragment {
 
                     }
                 });
+            }
+        });
+
+        zrl=(ZRefreshLayout)view.findViewById(R.id.zrl);
+        zrl.setPinContent(true);
+        zrl.setPullListener(new ZRefreshLayout.PullListener() {
+            @Override
+            public void refresh(final ZRefreshLayout zRefreshLayout) {
+                Toast.makeText(zRefreshLayout.getContext(), "refresh", Toast.LENGTH_SHORT).show();
+                zrl.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        zrl.refreshComplete();
+                    }
+                }, 2000);
+            }
+
+            @Override
+            public void refreshAnimationComplete(ZRefreshLayout zRefreshLayout) {
+
+            }
+        });
+
+        zrl.setLoadMoreListener(new ZRefreshLayout.LoadMoreListener() {
+            @Override
+            public void loadMore(final ZRefreshLayout zRefreshLayout) {
+                Toast.makeText(zRefreshLayout.getContext(), "load", Toast.LENGTH_SHORT).show();
+                zrl.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        zrl.loadMoreComplete();
+                    }
+                }, 2000);
+
+            }
+
+            @Override
+            public void loadMoreAnimationComplete(ZRefreshLayout zRefreshLayout) {
+
             }
         });
     }

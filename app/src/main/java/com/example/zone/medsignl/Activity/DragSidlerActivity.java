@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import zone.com.zrefreshlayout.ZRefreshLayout;
+
 /**
  * Created by Zone on 2015/12/16.
  */
@@ -44,6 +46,7 @@ public class DragSidlerActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private SimpleFragmentPagerAdapter fragAdapter;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,7 @@ public class DragSidlerActivity extends AppCompatActivity {
         // 设置显示Toolbar
 
         drawer_layout=(DrawerLayout)findViewById(R.id.drawer_layout);
+
         drawer_layout.openDrawer(GravityCompat.START);
         tabs=(TabLayout)findViewById(R.id.tabs);
         viewPager=(ViewPager)findViewById(R.id.viewPager);

@@ -1,55 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/id_coordinatorlayout"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_width="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/id_coordinatorlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/id_toolbar"
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppThemeZZ"
-            app:theme="@style/AppThemeZZ"
-            app:title="Love" />
-        <!--注意这里没有  app:layout_scrollFlags="scroll|enterAlways"　　
-        但是必须底下可以没有　上边没有的画下面则不好使　
-        因为　　　头动不了　脚步也就走不动了-->
-        <ImageView
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/abc"
-            app:layout_scrollFlags="scroll|enterAlways"
-            android:background="#b4f7a9"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content">
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/id_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppThemeZZ"
+                app:theme="@style/AppThemeZZ"
+                app:title="Love" />
+            <!--注意这里没有  app:layout_scrollFlags="scroll|enterAlways"　　
+            但是必须底下可以没有　上边没有的画下面则不好使　
+            因为　　　头动不了　脚步也就走不动了-->
+            <ImageView
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#b4f7a9"
+                android:scaleType="centerCrop"
+                android:src="@drawable/abc"
+                app:layout_scrollFlags="scroll|enterAlways" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tabs"
+                style="@style/AppThemeZZ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#e78d8d"
+                app:tabIndicatorColor="@android:color/holo_blue_bright"
+                app:tabSelectedTextColor="@android:color/holo_blue_bright"
+                tools:targetApi="ice_cream_sandwich" />
+            <!--app:tabTextColor="@android:color/black"-->
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabIndicatorColor="@android:color/holo_blue_bright"
-            app:tabSelectedTextColor="@android:color/holo_blue_bright"
-            style="@style/AppThemeZZ"
-            tools:targetApi="ice_cream_sandwich"
-            android:background="#e78d8d" />
-        <!--app:tabTextColor="@android:color/black"-->
-    </android.support.design.widget.AppBarLayout>
+            android:background="@android:color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    </android.support.design.widget.CoordinatorLayout>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
