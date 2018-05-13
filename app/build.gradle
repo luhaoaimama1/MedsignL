@@ -2,11 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+//    buildToolsVersion "23.0.2"
+    buildToolsVersion "25.0.3"
 
     defaultConfig {
         applicationId "com.example.zone.medsignl"
-        minSdkVersion 12
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -34,5 +35,5 @@ dependencies {
 //        exclude group: 'com.android.support', module: 'recyclerview-v7'
 //    })
 
-    compile project(path: ':library')
+    compile 'com.github.luhaoaimama1:ZRefreshLayout:1.0.19'
 }

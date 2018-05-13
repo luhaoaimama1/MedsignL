@@ -1,5 +1,6 @@
 package com.example.zone.medsignl.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -30,9 +31,10 @@ import zone.com.zrefreshlayout.ZRefreshLayout;
  */
 public class DragSidlerActivity extends AppCompatActivity {
 
-    private  DrawerLayout drawer_layout;
-    private  static List<String> menu=new ArrayList<String>();
-    static{
+    private DrawerLayout drawer_layout;
+    private static List<String> menu = new ArrayList<String>();
+
+    static {
         menu.add("我黑风你啊");
         menu.add("变态");
         menu.add("无敌龙卷风");
@@ -53,25 +55,21 @@ public class DragSidlerActivity extends AppCompatActivity {
         setContentView(R.layout.drag_silder);
         // 设置显示Toolbar
 
-        drawer_layout=(DrawerLayout)findViewById(R.id.drawer_layout);
+        drawer_layout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         drawer_layout.openDrawer(GravityCompat.START);
-        tabs=(TabLayout)findViewById(R.id.tabs);
-        viewPager=(ViewPager)findViewById(R.id.viewPager);
-        
+        tabs = (TabLayout) findViewById(R.id.tabs);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+
         initNavigation();
         iniToolBar();
         initTab2ViewPager();
-
-
-
-
 
     }
 
     private void initTab2ViewPager() {
 
-        fragAdapter=new SimpleFragmentPagerAdapter(getSupportFragmentManager(),this);
+        fragAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(fragAdapter);
         tabs.setupWithViewPager(viewPager);
         tabs.setTabMode(TabLayout.MODE_FIXED);
@@ -79,7 +77,7 @@ public class DragSidlerActivity extends AppCompatActivity {
             TabLayout.Tab tab = tabs.getTabAt(i);
             tab.setCustomView(fragAdapter.getTabView(i));
         }
- //        List<String> tabList = new ArrayList<String>();
+        //        List<String> tabList = new ArrayList<String>();
 //        tabList.add("Tab1");
 //        tabList.add("Tab2");
 //        tabList.add("Tab3");
@@ -90,29 +88,29 @@ public class DragSidlerActivity extends AppCompatActivity {
     }
 
     private void initNavigation() {
-        adapter=new Adapter_Zone<String>(this,menu,R.layout.text_item) {
+        adapter = new Adapter_Zone<String>(this, menu, R.layout.text_item) {
             @Override
-            public void setData(Map<Integer, View> viewMap, final String data,final int position) {
+            public void setData(Map<Integer, View> viewMap, final String data, final int position) {
                 TextView tv = (TextView) viewMap.get(R.id.tv);
                 tv.setText(data);
                 viewMap.get(R.id.ll).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(DragSidlerActivity.this, "点击了"+data, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DragSidlerActivity.this, "点击了" + data, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         };
-        drawer_list=(ListView)findViewById(R.id.drawer_list);
+        drawer_list = (ListView) findViewById(R.id.drawer_list);
         drawer_list.setAdapter(adapter);
     }
 
     private void iniToolBar() {
-        mToolbar=(Toolbar)findViewById(R.id.id_toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.id_toolbar);
         //这句话　是把onCreateOptionsMenu　里面创建的菜单　加载上
         setSupportActionBar(mToolbar);
 //        // 设置Drawerlayout开关指示器，即Toolbar最左边的那个icon
-        ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer_layout, mToolbar, R.string.open, R.string.close){
+        ActionBarDrawerToggle mActionBarDrawerToggle = new ActionBarDrawerToggle(this, drawer_layout, mToolbar, R.string.open, R.string.close) {
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
@@ -138,9 +136,16 @@ public class DragSidlerActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_edit:
                 Toast.makeText(this, "查找按钮", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, ToolbarActivity.class));
                 break;
             case R.id.action_share:
                 Toast.makeText(this, "分享按钮", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_settings:
+                Toast.makeText(this, "按钮1", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_settings2:
+                Toast.makeText(this, "按钮2", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -149,9 +154,9 @@ public class DragSidlerActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(drawer_layout.isDrawerOpen(GravityCompat.START)){
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawers();
-        }else{
+        } else {
             drawer_layout.openDrawer(GravityCompat.START);
         }
 

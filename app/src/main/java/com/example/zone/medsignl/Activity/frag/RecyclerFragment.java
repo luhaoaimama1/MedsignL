@@ -101,10 +101,6 @@ public class RecyclerFragment extends Fragment {
                 }, 2000);
             }
 
-            @Override
-            public void refreshAnimationComplete(ZRefreshLayout zRefreshLayout) {
-
-            }
         });
 
         zrl.setLoadMoreListener(new ZRefreshLayout.LoadMoreListener() {
@@ -120,10 +116,6 @@ public class RecyclerFragment extends Fragment {
 
             }
 
-            @Override
-            public void loadMoreAnimationComplete(ZRefreshLayout zRefreshLayout) {
-
-            }
         });
     }
 }
